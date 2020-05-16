@@ -7,7 +7,7 @@ public class Coche : MonoBehaviour {
     [SerializeField] int velocidad = 20;
     [SerializeField] int velocidadRotacion = 15;
     int marcha = 1;
-    [SerializeField] int vel = 10;
+    [SerializeField] float traqueteo = 0.5f;
    
 
 	// Use this for initialization
@@ -26,7 +26,7 @@ public class Coche : MonoBehaviour {
        
         transform.Translate(Vector3.forward * Time.deltaTime * velocidad * marcha);
 
-        transform.Translate(Vector3.right * Time.deltaTime * vel );
+        transform.Translate(Vector3.right * Time.deltaTime * traqueteo );
 
         // SOLO HAREMOS LA ROTACION CUANDO LA MARCHA SEA -1
         if (marcha == -1)
